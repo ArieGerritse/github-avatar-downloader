@@ -1,0 +1,23 @@
+{
+  "name": "avatar-downloader",
+  "version": "1.0.0",
+  "description": "Avatar Download Project Week 2 Day 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArieGerritse/github-avatar-downloader.git"
+  },
+  "author": "Arie Gerritse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArieGerritse/github-avatar-downloader/issues"
+  },
+  "homepage": "https://github.com/ArieGerritse/github-avatar-downloader#readme",
+  "keywords": [],
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
