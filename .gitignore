@@ -55,4 +55,14 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+*.egg-info
+*.pyc
+build/
+dist/
 .env
+__pycache__
+.coverage
+.DS_Store
+htmlcov/
+.cache/
+.idea

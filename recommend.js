@@ -62,7 +62,7 @@ function justAvatars(jonObj, imgFilePath) {
   console.log('Images downloads complete to: avatars folder');
 
 }
-
+/*
 function downloadImageByURL(url, filePath, name) {
 
   var request = require('request');
@@ -82,11 +82,10 @@ function downloadImageByURL(url, filePath, name) {
       stream.pipe(fs.createWriteStream(filePath + '/' + name + '.' + extention[1]));
     });
 
-}
+}*/
 
 function errorCheck() {
 
-  //Not exited about all the else if statements, will fix if there is time, suggestions recommended for making it look better
   var fs = require('fs');
   var args = process.argv.slice(2);
 
