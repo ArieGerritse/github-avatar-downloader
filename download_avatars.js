@@ -45,7 +45,7 @@ function justAvatars(jonObj, imgFilePath) {
     downloadImageByURL(jonObj[x].avatar_url, imgFilePath, jonObj[x].login);
   }
 
-  console.log('Img downloads complete to: imgs folder');
+  console.log('Images downloads complete to: avatars folder');
 
 }
 
@@ -53,14 +53,44 @@ function downloadImageByURL(url, filePath, name) {
 
   var request = require('request');
   var fs = require('fs');
+  var extention;
 
-  request.get(url) // Note 1
+  var stream = request.get(url) // Note 1
     .on('error', function(err) { // Note 2
       throw err;
     })
-    .pipe(fs.createWriteStream(filePath + '/' + name + '.'));
+    .on('response', function(response) { // Note 3
+      // console.log(response.headers["content-type"]);
+      extention = response.headers["content-type"].split('/');
+      stream.pipe(fs.createWriteStream(filePath + '/' + name + '.' + extention[1]));
+    });
+
 }
 
-getRepoContributors('jquery', 'jquery', justAvatars, 'imgs');
+function checkArguments() {
+
+  var args = process.argv.slice(2);
+
+  if (args[0] && args[1]) {
+
+    getRepoContributors(args[0], args[1], justAvatars, 'avatars');
+
+  } else if (args[0]) {
+
+    console.log('Please input a valid Repo Name.');
+
+  } else if (args[1]) {
+
+    console.log('Please input a valid Repo Owner.');
+
+  } else {
+
+    console.log('Please input a valid Repo Onwer and Repo Name.');
+
+  }
+
+}
+
+checkArguments();
 
 //4c3fb552a74ebd49dd9b49a51668e4db8d16b794 token
