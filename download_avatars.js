@@ -1,8 +1,8 @@
 function getRepoContributors(repoOwner, repoName, cb, imgPath) {
 
   var https = require('https');
-  var GITHUB_USER = "ArieGerritse";
-  var GITHUB_TOKEN = "4c3fb552a74ebd49dd9b49a51668e4db8d16b794";
+  var GITHUB_USER = GIT_USERNAME;
+  var GITHUB_TOKEN = GIT_TOKEN;
   var request = require('request');
   var string = '';
 
@@ -90,6 +90,8 @@ function checkArguments() {
   }
 
 }
+
+require('./secret.env');
 
 checkArguments();
 

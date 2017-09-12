@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ArieGerritse/github-avatar-downloader#readme",
   "keywords": [],
   "dependencies": {
+    "dotenv": "^4.0.0",
     "request": "^2.81.0"
   }
 }
